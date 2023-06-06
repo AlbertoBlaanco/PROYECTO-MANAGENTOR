@@ -4,7 +4,7 @@
     android:id="@+id/toolbar1"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="@android:color/holo_blue_bright"
+    android:background="@color/azul"
     android:elevation="4dp"
     android:layout_margin="0dp"
     android:layout_alignParentTop="true">
@@ -32,6 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="110dp"
+            android:textStyle="bold"
             android:layout_toEndOf="@id/left_icon"
             android:text="Historial Citas"
             android:textSize="20sp" />

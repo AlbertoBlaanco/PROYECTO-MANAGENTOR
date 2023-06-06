@@ -52,8 +52,7 @@ public class EditarActivity extends AppCompatActivity {
 
     private Spinner spinner_furnished_edit;
 
-    private int CREATE_CONTACT = 1;
-    private int PICK_CONTACT = 2;
+
 
     private final Propiedad property = new Propiedad();
     @Override

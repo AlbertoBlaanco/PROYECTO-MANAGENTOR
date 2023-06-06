@@ -107,8 +107,8 @@ public class ListaCitasActivity extends AppCompatActivity implements ListadoCita
 
             case R.id.nav_user_profile:
                 Intent intent = new Intent(this, ProfileActivity.class);
-                int idUser = getIntent().getExtras().getInt("idUser");
-                intent.putExtra("idUser",idUser);
+                // int idUser = getIntent().getExtras().getInt("idUser");
+                // intent.putExtra("idUser",idUser);
                 startActivity(intent);
                 break;
             case R.id.nav_logout:

@@ -33,6 +33,10 @@ public class UsuarioDAO {
         String sql_filtro = "";
         String sql_final = "";
         Usuario entidad = new Usuario();
+        
+         if (usuario.getIdEmple() != 0) {
+            sql_filtro += "AND idEmple='" + usuario.getIdEmple() + "'";
+        }
 
         if (usuario.getEmail() != null) {
             sql_filtro += "AND Email='" + usuario.getEmail() + "'";

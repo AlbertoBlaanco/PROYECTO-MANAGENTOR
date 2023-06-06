@@ -1,6 +1,7 @@
 package com.example.managentorapp.login;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -75,9 +76,19 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                     Usuario userRespuesta = response.body();
                     if(userRespuesta != null){
+                        // Para guardar los datos
+                        SharedPreferences sharedPref = getSharedPreferences("myPrefs", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.putInt("ID_USER", userRespuesta.getIdEmple());
+                        editor.apply();
+
                         Intent intent = new Intent(getBaseContext(), LstPropActivity.class);
-                        intent.putExtra("idUser",userRespuesta.getIdEmple());
+                        //intent.putExtra("idUser",userRespuesta.getIdEmple());
                         startActivity(intent);
+
+
+
+
                     }
             }
 

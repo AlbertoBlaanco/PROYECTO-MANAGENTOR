@@ -4,31 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/blue_btn_bg_color"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <include layout="@layout/toolbar6" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="143dp"
             android:layout_gravity="center"
+            android:layout_marginBottom="450dp"
             android:src="@drawable/logo" />
-
-    </com.google.android.material.appbar.AppBarLayout>
 
 
     <ScrollView
-        android:layout_marginTop="190dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="190dp"
         android:fillViewport="true">
 
         <LinearLayout
@@ -56,9 +47,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Información Personal"
-                        android:textStyle="bold"
                         android:textColor="#000000"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/nombre"
@@ -88,36 +79,42 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:hint="Contraseña" />
+
                     <EditText
                         android:id="@+id/Telefono"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:hint="Telefono" />
+
                     <EditText
                         android:id="@+id/DNI"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:hint="DNI" />
+
                     <EditText
                         android:id="@+id/Direccion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:hint="Direccion" />
+
                     <EditText
                         android:id="@+id/Fecha_Nacimiento"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:hint="Fecha Nacimiento" />
+
                     <EditText
                         android:id="@+id/Ciudad"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:hint="Ciudad" />
+
                     <EditText
                         android:id="@+id/Empresa"
                         android:layout_width="match_parent"
@@ -126,7 +123,6 @@
                         android:hint="Empresa" />
 
                     <!-- Repite para los demás campos... -->
-
 
 
                 </LinearLayout>
@@ -139,8 +135,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Registrarse"
-                android:backgroundTint="@color/blue_btn_bg_color" />
+                android:backgroundTint="@color/azul"
+                android:text="Registrarse" />
 
         </LinearLayout>
     </ScrollView>

@@ -7,6 +7,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,7 +34,8 @@ public class ProfileActivity extends AppCompatActivity implements ViewProfileCon
 
         initComponents();
         initPresenter();
-        initData(getIntent().getExtras().getInt("idUser"));
+        //getIntent().getExtras().getInt("idUser")
+        initData();
     }
 
 
@@ -75,7 +77,10 @@ public class ProfileActivity extends AppCompatActivity implements ViewProfileCon
                 viewProfilePresenter = new ViewProfilePresenter(this);
     }
 
-    public void initData(int idUser){
+    public void initData(){
+        // Para recuperar los datos
+        SharedPreferences sharedPref = getSharedPreferences("myPrefs", MODE_PRIVATE);
+        int idUser = sharedPref.getInt("ID_USER", 0);
         viewProfilePresenter.getProfile(idUser);
     }
 

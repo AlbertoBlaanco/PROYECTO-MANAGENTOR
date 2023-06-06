@@ -13,37 +13,28 @@
             android:id="@+id/home"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <include layout="@layout/toolbar1" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/photo_recycler_view"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="662dp"
                 android:layout_weight="1"
                 android:clipToPadding="true"
                 android:nestedScrollingEnabled="true" />
 
-          <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#00000000"
-                android:gravity="center_horizontal|bottom">
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/add_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"
-
-                    android:src="@drawable/add_icon_black" />
-
-            </RelativeLayout>
         </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="10dp"
+            app:backgroundTint="#716a97"
+            android:src="@drawable/add_icon_black" />
 
     </FrameLayout>
 
@@ -56,5 +47,3 @@
         app:headerLayout="@layout/nav_header" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
-
-

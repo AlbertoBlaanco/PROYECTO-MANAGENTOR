@@ -30,20 +30,14 @@
         <TextView
             android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="110dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="130dp"
             android:layout_toEndOf="@id/left_icon"
+            android:text="Tu perfil"
             android:textStyle="bold"
-            android:text="Managentor"
             android:textSize="20sp" />
 
-        <ImageView
-            android:id="@+id/right_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="-242dp"
-            android:src="@drawable/filter" />
+
 
     </RelativeLayout>
 

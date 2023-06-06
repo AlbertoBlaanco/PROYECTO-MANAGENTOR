@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.managentorapp.R;
 import com.example.managentorapp.entitities.Usuario;
 import com.example.managentorapp.utils.ApiClient;
 import com.example.managentorapp.utils.ApiInterface;
+import com.example.managentorapp.verDetalles.view.VerDetallesActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -41,6 +43,17 @@ public class RegisterActivity extends AppCompatActivity {
         email = findViewById(R.id.Email);
         direccion = findViewById(R.id.Direccion);
         BtnRegister = findViewById(R.id.register_button);
+
+        ImageView rightIcon = findViewById(R.id.right_icon);
+        rightIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), LoginActivity.class);
+
+                startActivity(intent);
+            }
+        });
+
         BtnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

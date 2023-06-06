@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.managentorapp.R;
@@ -47,6 +48,16 @@ public class AddInterestedClient extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 initData();
+            }
+        });
+
+        ImageView rightIcon = findViewById(R.id.right_icon);
+        rightIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), VerDetallesActivity.class);
+                intent.putExtra("idInmueble",idInmueble);
+                startActivity(intent);
             }
         });
     }
