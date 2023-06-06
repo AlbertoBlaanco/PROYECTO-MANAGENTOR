@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="RtlSymmetry">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#FFF"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/item_photo"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/add_photo"
+                android:contentDescription="@string/property_photo" />
+
+            <TextView
+                android:id="@+id/property_address"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/h1"
+                android:paddingTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/property_direction" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/cama" />
+
+                <TextView
+                    android:id="@+id/bedroom_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/one"
+                    android:paddingTop="5dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="15dp"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/bathroom">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/bathroom_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/one"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="5dp"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="18sp" />
+
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ascensor"
+                    android:baselineAlignBottom="@id/bathroom_number" />
+
+
+
+
+                <TextView
+                    android:id="@+id/elevator_yes_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:paddingTop="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:text="@string/yes" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_data"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:textSize="18sp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/body_bold"
+                    android:text="@string/month_price_txt" />
+
+
+                <TextView
+                    android:id="@+id/square_meters_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_data"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:textSize="18sp"
+                    android:paddingTop="5dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/body_bold"
+                    android:text="@string/square_meters_txt" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/property_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:focusable="true"
+                android:backgroundTint="@color/azul"
+                android:letterSpacing="0"
+                android:text="@string/button_details"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

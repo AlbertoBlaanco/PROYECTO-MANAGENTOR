@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:ignore="HardcodedText|RtlSymmetry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="12dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:paddingTop="12dp">
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/event_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAppearance="@style/h1"
+                android:gravity="center"
+                android:textSize="50sp"
+                android:hint="25" />
+
+        <TextView
+                android:id="@+id/event_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                android:textAppearance="@style/body_light_little"
+                android:gravity="center"
+                android:hint="10:30" />
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            tools:ignore="RtlHardcoded">
+
+        <TextView
+                android:id="@+id/event_title"
+                android:layout_width="match_parent"
+                android:layout_height="21dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                tools:hint="Nombre del evento" />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:layout_marginTop="4dp"
+                    android:paddingEnd="5dp"
+                    android:textAppearance="@style/body_light_little"
+                    tools:text="Dirección:" />
+
+            <TextView
+                    android:id="@+id/event_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:layout_marginTop="4dp"
+                    android:textColor="#9f9f9f"
+                    android:textSize="12sp"
+                    tools:hint="Dirección del evento" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:textAppearance="@style/body_light_little"
+                    tools:text="Cliente:" />
+
+            <TextView
+                    android:id="@+id/event_people"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:layout_marginTop="4dp"
+                    android:textColor="#9f9f9f"
+                    android:textSize="12sp"
+                    tools:hint="Nombre del cliente" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

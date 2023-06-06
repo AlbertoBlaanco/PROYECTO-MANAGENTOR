@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <include layout="@layout/toolbar4" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+
+    android:layout_marginTop="?attr/actionBarSize"
+    tools:context=".addProperty.view.addPropertyActivity2">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:orientation="vertical">
+
+            <!--Propietario-->
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_width="284dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="191dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ascensor" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/elevator_txt"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:textColor="#000"
+                    android:layout_marginTop="20dp"
+                    android:textAlignment="center" />
+
+
+            </RelativeLayout>
+
+
+            <!--Elevator-->
+
+
+            <!--Elevator radio buttons (yes/no)-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center">
+
+                <RadioGroup
+                    android:id="@+id/has_elevator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20sp"
+                        android:checked="true"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:id="@+id/no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20sp"
+                        android:text="@string/no" />
+                </RadioGroup>
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_width="284dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/price" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Precio"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:textColor="#000"
+                    android:id="@+id/features"
+                    android:textAlignment="center"
+                    android:layout_marginTop="20dp" />
+
+            </RelativeLayout>
+
+            <!--Price-->
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/price"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:autofillHints="Precio (€/mes)"
+                    android:inputType="numberDecimal"
+                    android:textSize="14sp"
+                    android:textAlignment="center"
+                    android:layout_marginTop="15dp"
+                    android:hint="Precio mensual" />
+
+                <TextView
+                    android:id="@+id/txt_month_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="€/mes"
+                    android:layout_alignParentEnd="true"
+                    android:textSize="18sp"
+                    android:textColor="#000"
+                    android:textAlignment="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp" />
+
+            </RelativeLayout>
+            <!--END Price-->
+
+            <!--Deposit-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:layout_marginTop="10dp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txt_bedroom"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Número de fianzas"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginStart="10dp"
+                        android:textColor="#000" />
+                </RelativeLayout>
+
+                <!--Number Picker-->
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+
+                </RelativeLayout>
+                <!--END NumberPicker-->
+            </LinearLayout>
+            <!--Aditional comments-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_width="284dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="311dp"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/comentario" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Comentarios adicionales"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:textColor="#000"
+                    android:textAlignment="center"
+                    android:layout_marginTop="20dp" />
+            </RelativeLayout>
+
+
+            <EditText
+                android:id="@+id/comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:layout_marginTop="15dp"
+                android:hint="Otros comentarios sobre la propiedad" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_width="284dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="311dp"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/directorio" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Contacto del propietario"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:textColor="#000"
+                    android:textAlignment="center"
+                    android:layout_marginTop="20dp" />
+            </RelativeLayout>
+
+
+
+            <!--Create or import contact-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:baselineAligned="false">
+
+                <EditText
+                    android:id="@+id/owner_name_edit"
+                    android:inputType="text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_horizontal"
+                    android:hint="Nombre"
+                    android:textAppearance="@style/body_light" />
+
+                <EditText
+                    android:id="@+id/owner_phone_edit"
+                    android:inputType="phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_horizontal"
+                    android:hint="Teléfono"
+                    android:textAppearance="@style/body_light" />
+
+
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/continue_step_two"
+                    android:letterSpacing="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:backgroundTint="@color/azul"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:focusable="true"
+                    android:textAllCaps="false"
+                    android:text="@string/continue_text" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
+</FrameLayout>
