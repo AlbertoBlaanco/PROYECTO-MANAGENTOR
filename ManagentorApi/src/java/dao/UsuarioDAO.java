@@ -33,8 +33,8 @@ public class UsuarioDAO {
         String sql_filtro = "";
         String sql_final = "";
         Usuario entidad = new Usuario();
-        
-         if (usuario.getIdEmple() != 0) {
+
+        if (usuario.getIdEmple() != 0) {
             sql_filtro += "AND idEmple='" + usuario.getIdEmple() + "'";
         }
 
@@ -83,21 +83,21 @@ public class UsuarioDAO {
 
             if (bean != null) {
 
-                sql_filtro += (bean.getDireccion() != null ? bean.getDireccion() : "") + "', "
-                        + (bean.getFecha_Nac() != null ? bean.getFecha_Nac() : "") + "', "
-                        + (bean.getDNI() != null ? bean.getDNI() : "") + "', "
-                        + (bean.getNombre() != null ? bean.getNombre() : "") + "', "
-                        + (bean.getApellido() != null ? bean.getApellido() : "") + "', "
-                        + (bean.getPassword() != null ? bean.getPassword() : "") + "', "
+                sql_filtro += (bean.getDireccion() != null ? bean.getDireccion() : "") + "', '"
+                        + (bean.getFecha_Nac() != null ? bean.getFecha_Nac() : "") + "', '"
+                        + (bean.getDNI() != null ? bean.getDNI() : "") + "', '"
+                        + (bean.getNombre() != null ? bean.getNombre() : "") + "', '"
+                        + (bean.getApellido() != null ? bean.getApellido() : "") + "', '"
+                        + (bean.getPassword() != null ? bean.getPassword() : "") + "', '"
                         + (bean.getEmpresa() != null ? bean.getEmpresa() : "") + "', '"
-                        + (bean.getTelefono() != null ? bean.getTelefono() : "") + "', "
+                        + (bean.getTelefono() != null ? bean.getTelefono() : "") + "', '"
                         + (bean.getCiudad() != null ? bean.getCiudad() : "") + "', '"
                         + (bean.getEmail() != null ? bean.getEmail() : "") + "')";
 
             }
 
             sql_final = SQL_ADD + sql_filtro;
-
+            System.out.println(sql_final);
             filasAF = miMotor.execute(sql_final);
 
             //ResultSet resultset = this.miMotor.executeQuery(sql_final);

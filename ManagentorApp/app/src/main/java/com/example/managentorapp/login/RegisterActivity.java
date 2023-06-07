@@ -71,15 +71,15 @@ public class RegisterActivity extends AppCompatActivity {
     private void initData(){
         Usuario user = new Usuario();
         user.setNombre(nombre.getText().toString());
-        user.setNombre(apellido.getText().toString());
-        user.setNombre(fecha_nac.getText().toString());
-        user.setNombre(Dni.getText().toString());
-        user.setNombre(Pass.getText().toString());
-        user.setNombre(empresa.getText().toString());
-        user.setNombre(telefono.getText().toString());
-        user.setNombre(ciudad.getText().toString());
-        user.setNombre(email.getText().toString());
-        user.setNombre(direccion.getText().toString());
+        user.setApellido(apellido.getText().toString());
+        user.setFecha_Nac(fecha_nac.getText().toString());
+        user.setDNI(Dni.getText().toString());
+        user.setPassword(Pass.getText().toString());
+        user.setEmpresa(empresa.getText().toString());
+        user.setTelefono(telefono.getText().toString());
+        user.setCiudad(ciudad.getText().toString());
+        user.setEmail(email.getText().toString());
+        user.setDireccion(direccion.getText().toString());
 
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
         Call<Void> call = apiService.insertUser(user);

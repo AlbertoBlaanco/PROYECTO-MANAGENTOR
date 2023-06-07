@@ -315,7 +315,7 @@ public class ManagentorAPI {
         Gson gson = new Gson();
         Usuario user = gson.fromJson(usuario, Usuario.class);
         UsuarioDAO usuarioDao = new UsuarioDAO();
-        usuarioDao.findOne(user);
+        usuarioDao.addUsuario(user);
 
         return "Hecho";
     }
