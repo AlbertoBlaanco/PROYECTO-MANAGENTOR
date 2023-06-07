@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-06-2023 a las 22:06:50
+-- Tiempo de generación: 07-06-2023 a las 20:46:33
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -77,13 +77,7 @@ INSERT INTO `cita` (`idCita`, `idInmueble`, `idCliente`, `Hora`, `Lugar`, `Motiv
 (7, 3, 6, '09:30', 'Calle Valencia 12', 'Visita de inmueble', '2023-05-17'),
 (8, 4, 2, '17:00', 'Calle Bilbao 7', 'Firma de contrato', '2023-05-20'),
 (9, 2, 5, '18:00', 'Calle Mayor 12', 'Entrega de llaves', '2023-05-23'),
-(10, 1, 6, '10:30', 'Calle Granada 5', 'Visita de inmueble', '2023-05-25'),
-(11, 1, 13, '17:25', 'Calle Gran Via 1', 'SIUU', '2023-05-04'),
-(12, 1, 13, '17:25', 'Calle Gran Via 1', 'SIUU', '2023-05-04'),
-(13, 1, 11, '03:10', 'Calle Gran Via 1', 'ErPepe', '2023-05-01'),
-(14, 1, 6, '02:10', 'Calle Gran Via 1', 'KinkiNasty', '2023-05-15'),
-(15, 16, 14, '20:20', 'Pepe Castao, 5D 12 7823', 'Tus huevos', '2023-05-11'),
-(16, 1, 6, '01:05', 'Calle Gran Via 1', 'Traspaso De Llaves', '2023-05-08');
+(10, 1, 6, '10:30', 'Calle Granada 5', 'Visita de inmueble', '2023-05-25');
 
 -- --------------------------------------------------------
 
@@ -131,13 +125,13 @@ INSERT INTO `cliente` (`idCliente`, `idInmueble`, `Fecha_nacicli`, `ApellidoCli`
 CREATE TABLE `empleado` (
   `idEmple` int(11) NOT NULL,
   `Direccion` varchar(255) DEFAULT NULL,
-  `Fecha_nac` date DEFAULT NULL,
+  `Fecha_nac` varchar(255) DEFAULT NULL,
   `DNI` varchar(255) DEFAULT NULL,
   `Nombre` varchar(255) DEFAULT NULL,
   `Apellido` varchar(255) DEFAULT NULL,
   `Password` varchar(255) NOT NULL,
   `Empresa` varchar(255) DEFAULT NULL,
-  `Telefono` int(11) DEFAULT NULL,
+  `Telefono` varchar(11) DEFAULT NULL,
   `Ciudad` varchar(255) DEFAULT NULL,
   `Email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
@@ -147,15 +141,16 @@ CREATE TABLE `empleado` (
 --
 
 INSERT INTO `empleado` (`idEmple`, `Direccion`, `Fecha_nac`, `DNI`, `Nombre`, `Apellido`, `Password`, `Empresa`, `Telefono`, `Ciudad`, `Email`) VALUES
-(1, 'Calle del Trabajo 123', '1990-05-15', '12345678A', 'Juan', 'Pérez', '123456', 'ABC Inc.', 123456789, 'Madrid', 'jperez@managentor.com'),
-(2, 'Avenida de la Empresa 456', '1985-08-10', '87654321B', 'María', 'García', '123456', 'DEF S.A.', 987654321, 'Barcelona', 'mgarcia@managentor.com'),
-(3, 'Calle del Progreso 789', '1995-02-25', '13579246C', 'Pedro', 'Sánchez', '123456', 'GHI SL', 369258147, 'Valencia', 'psanchez@managentor.com'),
-(4, 'Calle del Futuro 321', '1992-11-18', '24681357D', 'Ana', 'Jiménez', '123456', 'JKL Inc.', 258147369, 'Sevilla', 'ajimenez@managentor.com'),
-(5, 'Calle del Éxito 456', '1988-04-30', '46813579E', 'Carlos', 'Gómez', '123456', 'MNO S.A.', 147258369, 'Bilbao', 'cgomez@managentor.com'),
-(6, 'Calle del Progreso 789', '1993-09-22', '57924681F', 'Marta', 'Rodríguez', '123456', 'PQR SL', 369852147, 'Murcia', 'mrodriguez@managentor.com'),
-(7, 'Calle del Trabajo 123', '1986-06-05', '35791346G', 'David', 'Hernández', '123456', 'STU Inc.', 123987456, 'Granada', 'dhernandez@managentor.com'),
-(8, 'Avenida de la Empresa 456', '1991-12-11', '46813579H', 'Sara', 'López', '123456', 'VWX S.A.', 456789123, 'Zaragoza', 'slopez@managentor.com'),
-(9, 'Calle del Futuro 321', '1989-03-27', '57924681I', 'Javier', 'Muñoz', '123456', 'YZA Inc.', 789456123, 'Málaga', 'jmunoz@managentor.com');
+(1, 'Calle del Trabajo 123', '1990-05-15', '12345678A', 'Juan', 'Pérez', '123456', 'ABC Inc.', '123456789', 'Madrid', 'jperez@managentor.com'),
+(2, 'Avenida de la Empresa 456', '1985-08-10', '87654321B', 'María', 'García', '123456', 'DEF S.A.', '987654321', 'Barcelona', 'mgarcia@managentor.com'),
+(3, 'Calle del Progreso 789', '1995-02-25', '13579246C', 'Pedro', 'Sánchez', '123456', 'GHI SL', '369258147', 'Valencia', 'psanchez@managentor.com'),
+(4, 'Calle del Futuro 321', '1992-11-18', '24681357D', 'Ana', 'Jiménez', '123456', 'JKL Inc.', '258147369', 'Sevilla', 'ajimenez@managentor.com'),
+(5, 'Calle del Éxito 456', '1988-04-30', '46813579E', 'Carlos', 'Gómez', '123456', 'MNO S.A.', '147258369', 'Bilbao', 'cgomez@managentor.com'),
+(6, 'Calle del Progreso 789', '1993-09-22', '57924681F', 'Marta', 'Rodríguez', '123456', 'PQR SL', '369852147', 'Murcia', 'mrodriguez@managentor.com'),
+(7, 'Calle del Trabajo 123', '1986-06-05', '35791346G', 'David', 'Hernández', '123456', 'STU Inc.', '123987456', 'Granada', 'dhernandez@managentor.com'),
+(8, 'Avenida de la Empresa 456', '1991-12-11', '46813579H', 'Sara', 'López', '123456', 'VWX S.A.', '456789123', 'Zaragoza', 'slopez@managentor.com'),
+(9, 'Calle del Futuro 321', '1989-03-27', '57924681I', 'Javier', 'Muñoz', '123456', 'YZA Inc.', '789456123', 'Málaga', 'jmunoz@managentor.com'),
+(11, 'Pepe', 'Pedri', '13245678N', 'Alberto', 'Blanco', '123456', 'ss', '132456789', 'SIUU', 'ablanco@managentor.com');
 
 -- --------------------------------------------------------
 
@@ -219,7 +214,8 @@ INSERT INTO `imagenes` (`id_Imagen`, `Id_Inmueble`, `Url`) VALUES
 (49, 15, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2020/03/1-Casa-rural-reformada.jpg.optimal.jpg'),
 (50, 15, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2020/04/4-Paz.jpg.optimal.jpg'),
 (51, 16, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2018/10/Albir-06.jpg.optimal.jpg'),
-(52, 16, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2021/01/fachada.jpg.optimal.jpg');
+(52, 16, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2021/01/fachada.jpg.optimal.jpg'),
+(53, 1, 'http://192.168.1.42//PruebaImagenesAndroid/image_1685909362952.jpg');
 
 -- --------------------------------------------------------
 
@@ -259,9 +255,9 @@ INSERT INTO `inmueble` (`idInmueble`, `Titular`, `CodPostal`, `Ciudad`, `Metros`
 (8, 'Sara Fernandez', 28008, 'Malaga', 110, 'A estrenar', 300000, 'Casa', 'Calle Velazquez 8', 2, 4, 0, 'Casa de lujo en zona exclusiva', 'https://img.freepik.com/foto-gratis/interior-habitacion-blanca-ventanas_181624-58245.jpg?w=1380&t=st=1682777480~exp=1682778080~hmac=d999226216cd2257e116ddb4eee72a64ea1fa096c02679f8f92b6f475ce0a927'),
 (9, 'Marta Ruiz', 28009, 'Madrid', 55, 'Reformado', 130000, 'Piso', 'Calle Orense 9', 1, 1, 0, 'Piso acogedor en zona comercial', 'https://img.freepik.com/foto-gratis/sala-estar-lujo-loft-renderizado-3d-estanteria-cerca-estanteria_105762-2224.jpg?w=1380&t=st=1682777486~exp=1682778086~hmac=d3e7b2aabf8caa6eb597a0b505dc11aa7aa72ca1e720febe6e07833c83e42ee2'),
 (10, 'Javier Lopez', 28010, 'Zaragoza', 95, 'Buen estado', 220000, 'Habitación', 'Calle Santa Engracia 10', 2, 2, 1, 'Habitación con gran terraza en zona céntrica', 'https://img.freepik.com/foto-gratis/3d-renderizado-loft-sala-estar-escandinava-mesa-trabajo-estanteria_105762-2162.jpg?w=1380&t=st=1682777513~exp=1682778113~hmac=8dc8cb97ffdb920540698b1f30d027c03068f6e11dadecc21fca82191dd6d5da'),
-(13, 'asdas', 546, 'asdad', 54, 'asdas', 546, '', 'asda, asdasd', 2, 3, 0, 'asdasd', ''),
+(13, 'David', 50046, '12,6D', 54, 'Zaragoza', 546, 'Piso', 'Catalan Mendola', 2, 3, 0, 'Excelente piso', ''),
 (14, 'ErPEPE', 50019, 'Vigo', 110, 'Vigo', 630, '', 'Almonazid, 5D', 3, 3, 0, 'Muy buen piso', ''),
-(15, 'asdasd', 546, 'asdasda', 45, 'asdas', 65, '', 'HOliwis, adsad', 2, 4, 0, 'asdasd', ''),
+(15, 'Victor', 546, '5D', 45, 'Zaragoza', 65, 'Piso', 'Americano en Paris', 2, 4, 0, 'Muy buen piso', ''),
 (16, '25', 546, 'SADA', 250, 'Zara', 999, 'Prueba', 'Pepe Castao, 5D 12 7823', 5, 1, 1, 'dadasda', '');
 
 -- --------------------------------------------------------
@@ -359,7 +355,7 @@ ALTER TABLE `alquilados`
 -- AUTO_INCREMENT de la tabla `cita`
 --
 ALTER TABLE `cita`
-  MODIFY `idCita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idCita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `cliente`
@@ -371,19 +367,19 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `idEmple` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idEmple` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `imagenes`
 --
 ALTER TABLE `imagenes`
-  MODIFY `id_Imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id_Imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT de la tabla `inmueble`
 --
 ALTER TABLE `inmueble`
-  MODIFY `idInmueble` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idInmueble` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `propietario`

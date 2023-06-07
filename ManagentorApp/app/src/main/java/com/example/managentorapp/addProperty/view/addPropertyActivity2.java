@@ -40,7 +40,7 @@ public class addPropertyActivity2 extends AppCompatActivity {
     private RadioGroup radioGroup;
     private ImageButton loadContact, createContactButton;
     private LinearLayout importContact, createContact;
-    private Propiedad property = new Propiedad();
+    private Propiedad property;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +87,8 @@ public class addPropertyActivity2 extends AppCompatActivity {
     public void initData(){
 
         if(isValidForm()){
+
+            this.property = (Propiedad) getIntent().getSerializableExtra("Property");
             this.property.setPrecio(Integer.parseInt(price.getText().toString()));
             this.property.setPropietario(ownerName.getText().toString());
             this.property.setComentariosAdicionales(comments.getText().toString());

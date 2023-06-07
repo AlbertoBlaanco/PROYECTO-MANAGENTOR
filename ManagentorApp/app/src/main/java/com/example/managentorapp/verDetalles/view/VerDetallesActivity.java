@@ -186,7 +186,7 @@ public class VerDetallesActivity extends AppCompatActivity implements  RentDialo
 
             @Override
             public void onFailure(Call<ArrayList<Cliente>> call, Throwable t) {
-                Toast.makeText(getBaseContext(),"No ha funcionado",Toast.LENGTH_LONG).show();
+                //Toast.makeText(getBaseContext(),"No ha funcionado",Toast.LENGTH_LONG).show();
             }
         });
 
