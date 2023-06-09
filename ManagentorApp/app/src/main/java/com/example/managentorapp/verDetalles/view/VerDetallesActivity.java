@@ -214,20 +214,25 @@ public class VerDetallesActivity extends AppCompatActivity implements  RentDialo
             }
         });
 
+        if(!property.getEstado().equals("Alquilado")){
+            rent_property.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(clientesInteresados != null ){
+                        rentDialog = new RentDialog(clientesInteresados, idInmueble);
+                        //rentDialog.setClientChosen(this);
+                        rentDialog.show(fm, "showDialog");
 
-        rent_property.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(clientesInteresados != null ){
-                    rentDialog = new RentDialog(clientesInteresados, idInmueble);
-                    //rentDialog.setClientChosen(this);
-                    rentDialog.show(fm, "showDialog");
-
-                }else{
-                    Toast.makeText(getBaseContext(), "No hay clientes para alquilar la propiedad...", Toast.LENGTH_LONG).show();
+                    }else{
+                        Toast.makeText(getBaseContext(), "No hay clientes para alquilar la propiedad...", Toast.LENGTH_LONG).show();
+                    }
                 }
-            }
-        });
+            });
+        }else{
+            rent_property.setVisibility(View.INVISIBLE);
+        }
+
+
 
 
 

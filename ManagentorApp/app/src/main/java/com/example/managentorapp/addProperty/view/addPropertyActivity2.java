@@ -87,7 +87,6 @@ public class addPropertyActivity2 extends AppCompatActivity {
     public void initData(){
 
         if(isValidForm()){
-
             this.property = (Propiedad) getIntent().getSerializableExtra("Property");
             this.property.setPrecio(Integer.parseInt(price.getText().toString()));
             this.property.setPropietario(ownerName.getText().toString());
