@@ -29,6 +29,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Timer;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -82,31 +83,65 @@ public class SimpleClientAdapter extends RecyclerView.Adapter<SimpleClientAdapte
 		holder.visitorCard.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
+				new SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE)
+						.setTitleText("¿Seguro que " + client.getNombreCli() + " va a alquilar el piso? ")
+						.setContentText("¿Lo juras?")
+						.setConfirmText("Alquilar")
+						.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+							@Override
+							public void onClick(SweetAlertDialog sDialog) {
+								sDialog.dismissWithAnimation();
+								Alquilados alquilados = new Alquilados();
+								alquilados.setId_cliente(client.getIdCliente());
+								alquilados.setId_inmueble(idInmueble);
+								Calendar cal = Calendar.getInstance();
+								SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+								String formattedDate = sdf.format(cal.getTime());
+								alquilados.setFecha(formattedDate);
+								Propiedad prop = new Propiedad();
+								prop.setEstado("Alquilado");
+								prop.setId_propiedad(idInmueble);
 
-				Alquilados alquilados = new Alquilados();
-				alquilados.setId_cliente(client.getIdCliente());
-				alquilados.setId_inmueble(idInmueble);
-				Calendar cal = Calendar.getInstance();
-				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-				String formattedDate = sdf.format(cal.getTime());
-				alquilados.setFecha(formattedDate);
 
-				ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-				Call<Void> call = apiService.addAlquilados(alquilados);
-				call.enqueue(new Callback<Void>() {
-					@Override
-					public void onResponse(Call<Void> call, Response<Void> response) {
-						Intent intent = new Intent(context, VerDetallesActivity.class);
-						intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-						intent.putExtra("idInmueble",idInmueble);
-						context.startActivity(intent);
-					}
 
-					@Override
-					public void onFailure(Call<Void> call, Throwable t) {
+								ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+								Call<Void> call = apiService.addAlquilados(alquilados);
+								call.enqueue(new Callback<Void>() {
+									@Override
+									public void onResponse(Call<Void> call, Response<Void> response) {
+										Call<Void> call2 = apiService.updateEstado(prop);
+										call2.enqueue(new Callback<Void>() {
+											@Override
+											public void onResponse(Call<Void> call, Response<Void> response) {
+												Intent intent = new Intent(context, VerDetallesActivity.class);
+												intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+												intent.putExtra("idInmueble",idInmueble);
+												context.startActivity(intent);
+											}
 
-					}
-				});
+											@Override
+											public void onFailure(Call<Void> call, Throwable t) {
+
+											}
+										});
+									}
+
+									@Override
+									public void onFailure(Call<Void> call, Throwable t) {
+
+									}
+								});
+							}
+						})
+						.setCancelButton("Cancelar", new SweetAlertDialog.OnSweetClickListener() {
+							@Override
+							public void onClick(SweetAlertDialog sDialog) {
+								sDialog.dismissWithAnimation();
+							}
+						}).show();
+
+
+
 
 
 			}

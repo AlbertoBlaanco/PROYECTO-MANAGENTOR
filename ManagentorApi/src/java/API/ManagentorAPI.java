@@ -177,10 +177,18 @@ public class ManagentorAPI {
         PropiedadDAO propiedadDAO = new PropiedadDAO();
         propiedadDAO.updatePropiedad(propiedad);
         return "finished";
-        //AlquiladosDAO alquiladosDAO = new AlquiladosDAO();
-        //ArrayList<Alquilados> lstClientes = alquiladosDAO.findAll(null);
-        //return Alquilados.fromArrayListToJson(lstClientes);
-
+    }
+    
+    @PUT
+    @Path("/updateEstado")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public String updateEstado(String prop) {
+        Gson gson = new Gson();
+        Propiedad propiedad = gson.fromJson(prop, Propiedad.class);
+        PropiedadDAO propiedadDAO = new PropiedadDAO();
+        propiedadDAO.updateEstado(propiedad);
+        return "finished";
     }
 
     @POST

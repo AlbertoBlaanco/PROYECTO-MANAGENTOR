@@ -175,7 +175,7 @@ public class PropiedadDAO {
                 if (bean.getPROPIETARIO() != null) {
                     sql_filtro += "Titular='" + bean.getPROPIETARIO() + "'";
                 }
-                if (zipcode != null) {
+                if (zipcode != null && zipcode != 0) {
                     sql_filtro += ", CodPostal='" + zipcode + "'";
                 }
 
@@ -183,7 +183,7 @@ public class PropiedadDAO {
                     sql_filtro += ", Ciudad='" + bean.getCIUDAD() + "'";
                 }
 
-                if (metros != null) {
+                if (metros != null && metros != 0) {
                     sql_filtro += ", Metros='" + metros + "'";
                 }
 
@@ -191,7 +191,7 @@ public class PropiedadDAO {
                     sql_filtro += ", Estado='" + bean.getESTADO() + "'";
                 }
 
-                if (deposito != null) {
+                if (deposito != null && deposito != 0) {
                     sql_filtro += ", Precio='" + deposito + "'";
                 }
                 if (bean.getFURNISHED() != null) {
@@ -202,10 +202,10 @@ public class PropiedadDAO {
                     sql_filtro += ", Direccion='" + bean.getDIRECCION() + "'";
                 }
 
-                if (num_banio != null) {
+                if (num_banio != null && num_banio != 0) {
                     sql_filtro += ", NumBath='" + num_banio + "'";
                 }
-                if (num_hab != null) {
+                if (num_hab != null && num_hab != 0) {
                     sql_filtro += ", NumHabit='" + num_hab + "'";
                 }
 
@@ -222,7 +222,7 @@ public class PropiedadDAO {
             }
 
             sql_final = SQL_UPDATE + sql_filtro + SQL_UPDATE_FINAL + bean.getID_PROPIEDAD();
-
+            System.out.println(sql_final);
             filasAF = miMotor.execute(sql_final);
 
             //ResultSet resultset = this.miMotor.executeQuery(sql_final);
@@ -232,6 +232,34 @@ public class PropiedadDAO {
         }
         return filasAF;
 
+    }
+    
+    public int updateEstado(Propiedad bean){
+        String sql_filtro = "";
+        String sql_final = "";
+        int filasAF = 0;
+        try {
+            this.miMotor.connect();
+
+            if (bean != null) {
+
+                if (bean.getESTADO() != null) {
+                    sql_filtro += " Estado='" + bean.getESTADO() + "'";
+                }
+
+
+            }
+
+            sql_final = SQL_UPDATE + sql_filtro + SQL_UPDATE_FINAL + bean.getID_PROPIEDAD();
+            System.out.println(sql_final);
+            filasAF = miMotor.execute(sql_final);
+
+            //ResultSet resultset = this.miMotor.executeQuery(sql_final);
+            this.miMotor.disconnect();
+        } catch (Exception ex) {
+            Logger.getLogger(PropiedadDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return filasAF;
     }
 
     public int addPropiedad(Propiedad bean) {

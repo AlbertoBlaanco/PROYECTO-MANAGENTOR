@@ -44,6 +44,8 @@ public interface ApiInterface {
     Call<ArrayList<Imagenes>> getImagenes(@Path("idInmueble") int idInmueble);
     @PUT("Controller/editPropiedad")
     Call<Void> editPropiedad(@Body Propiedad propiedad);
+    @PUT("Controller/updateEstado")
+    Call<Void> updateEstado(@Body Propiedad propiedad);
 
     @POST("Controller/addPropiedad")
     Call<Void> addPropiedad(@Body Propiedad propiedad);
