@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-06-2023 a las 20:46:33
+-- Tiempo de generación: 13-06-2023 a las 20:37:12
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -44,8 +44,7 @@ INSERT INTO `alquilados` (`id_alquilados`, `id_inmueble`, `id_cliente`, `Fecha`)
 (1, 1, 1, '2023-05-02'),
 (7, 3, 1, '2023-05-09'),
 (8, 2, 2, '2023-05-09'),
-(9, 6, 1, '2023-05-10'),
-(10, 15, 1, '2023-05-14');
+(9, 6, 1, '2023-05-10');
 
 -- --------------------------------------------------------
 
@@ -109,12 +108,7 @@ INSERT INTO `cliente` (`idCliente`, `idInmueble`, `Fecha_nacicli`, `ApellidoCli`
 (7, 3, '1993-08-12', 'Gómez', 'Isabel', 'Calle Goya 7', 777888999),
 (8, 4, '1983-12-07', 'Pérez', 'Ricardo', 'Calle Velázquez 8', 888999000),
 (9, 5, '1990-04-18', 'Sánchez', 'Carlos', 'Calle Serrano 9', 999000111),
-(10, 1, '1988-06-27', 'Romero', 'Ana', 'Calle Mayor 10', 123456789),
-(11, 1, '0000-00-00', '', 'asda', '', 273237),
-(12, 1, '0000-00-00', '', 'Manola', '', 123),
-(13, 1, '0000-00-00', '', 'Papito', '', 132456),
-(14, 16, '0000-00-00', '', 'Kaik', '', 888888),
-(15, 1, '0000-00-00', '', 'Akkari', '', 789456123);
+(10, 1, '1988-06-27', 'Romero', 'Ana', 'Calle Mayor 10', 123456789);
 
 -- --------------------------------------------------------
 
@@ -179,11 +173,6 @@ INSERT INTO `imagenes` (`id_Imagen`, `Id_Inmueble`, `Url`) VALUES
 (8, 8, 'https://theconcretehome.com/wp-content/uploads/2021/06/casas-prefabricadas-baratas-madrid-1030x580.jpg'),
 (9, 9, 'https://vidamodular.com/wp-content/uploads/2017/12/casas-prefabricadas-madrid-990x594.jpg'),
 (10, 10, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTpD-tBO47QrohG3aqVgWF2a4UdRaxCEDQfw&usqp=CAU'),
-(11, 13, 'https://img.jamesedition.com/listing_images/2022/10/11/10/51/56/7e22b60f-56c3-45f8-86e5-2a449d288889/je/1000x620xc.jpg'),
-(12, 14, 'https://www.promora.com/blog/wp-content/uploads/2016/03/Mejores_casas_La_Finca.jpg'),
-(15, 15, 'https://www.arquitectosmadrid20.com/blog/wp-content/uploads/arquitectos-madrid-estudio-arquitectura-en-madrid-proyectos-casas-modernas-13-1.jpg'),
-(16, 16, 'https://multimedia.metrocuadrado.com/10967-M2506897/10967-M2506897_37_p.jpg'),
-(17, 16, 'https://www.tucasitacalidade.com/wp-content/uploads/2019/10/casa-pasiva-segovia-27.jpg'),
 (22, 8, 'https://loff.it/wp-content/uploads/2019/05/loffit-madrid-tambien-tiene-casas-de-lujo-sothebys-vende-una-de-ellas-en-pozuelo-01.jpg'),
 (23, 2, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2020/08/casa-campo-de-cuento.png'),
 (24, 2, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2021/08/casas-de-campo-en-fotocasa.png'),
@@ -205,17 +194,7 @@ INSERT INTO `imagenes` (`id_Imagen`, `Id_Inmueble`, `Url`) VALUES
 (40, 9, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2016/05/Chalet-en-Ametlla-De-Mar.jpg.optimal.jpg'),
 (41, 10, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2020/01/1.-Jardín-1.jpg.optimal.jpg'),
 (42, 10, 'https://static.fotocasa.es/images/anuncio/2020/10/07/157451997/867169044.jpg?rule=web_412x257'),
-(43, 10, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2019/08/jardin-6.jpg.optimal.jpg'),
-(44, 13, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2021/12/casa-solo-en-casa.png'),
-(45, 13, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2018/06/prefabricadas.jpg.optimal.jpg'),
-(46, 13, 'https://static.inmofactory.com/images/inmofactory/documents/1/112653/33798925/574923465.jpg?rule=web_412x257'),
-(47, 14, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2018/08/casas_caras5_Chalet_Madrid1.jpg.optimal.jpg'),
-(48, 14, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2023/05/casa-autosuficiente-1.png'),
-(49, 15, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2020/03/1-Casa-rural-reformada.jpg.optimal.jpg'),
-(50, 15, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2020/04/4-Paz.jpg.optimal.jpg'),
-(51, 16, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2018/10/Albir-06.jpg.optimal.jpg'),
-(52, 16, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2021/01/fachada.jpg.optimal.jpg'),
-(53, 1, 'http://192.168.1.42//PruebaImagenesAndroid/image_1685909362952.jpg');
+(43, 10, 'https://s37805.pcdn.co/fotocasa-life/wp-content/uploads/2019/08/jardin-6.jpg.optimal.jpg');
 
 -- --------------------------------------------------------
 
@@ -245,20 +224,16 @@ CREATE TABLE `inmueble` (
 --
 
 INSERT INTO `inmueble` (`idInmueble`, `Titular`, `CodPostal`, `Ciudad`, `Metros`, `Estado`, `Precio`, `Tipo`, `Direccion`, `NumBath`, `NumHabit`, `hasElevator`, `descripcion`, `Imagen`) VALUES
-(1, 'Juan Perez', 28001, 'Zaragoza', 70, 'Buen estado', 150000, 'Piso', 'Calle Gran Via 1', 1, 2, 0, 'Piso céntrico en buena ubicación', 'https://img.freepik.com/foto-gratis/hermosa-foto-interior-casa-moderna-paredes-blancas-relajantes-muebles-tecnologia_181624-3828.jpg?w=1380&t=st=1682777413~exp=1682778013~hmac=8e653b070878922b7ec068afe8a053f9df0580013f104c69b29e2a8de8e9a0aa'),
-(2, 'Maria Garcia', 28002, 'Zaragoza', 100, 'Reformado', 250000, 'Casa', 'Calle Alcala 2', 2, 3, 0, 'Casa con patio en zona tranquila', 'https://img.freepik.com/foto-gratis/sala-estar-lujo-loft-representacion-3d-estanteria_105762-2104.jpg?w=1380&t=st=1682777382~exp=1682777982~hmac=dca59437c5067370705dde07fde78364acb82834169138cd9540bb70262faf52'),
-(3, 'Pedro Rodriguez', 28003, 'Madrid', 50, 'A reformar', 100000, 'Habitación', 'Calle Serrano 3', 1, 0, 1, 'Habitación con gran potencial', 'https://img.freepik.com/foto-gratis/hermosa-foto-casa-moderna-cocina-comedor_181624-2870.jpg?w=1380&t=st=1682777431~exp=1682778031~hmac=9c4ae71df28d5264a3580b3e0c3e4ce7ade20856152035c329c9d72ebaacac5d'),
-(4, 'Laura Perez', 28004, 'Vigo', 80, 'A estrenar', 200000, 'Habitación', 'Calle Princesa 4', 2, 2, 1, 'Habitación con vistas espectaculares', 'https://img.freepik.com/foto-gratis/sala-estar-nadie-ella_482257-55.jpg?w=1380&t=st=1682777446~exp=1682778046~hmac=66b66cd05de1792d4adf73116cc895e0789d09952ac4b99ef461758821db5438'),
-(5, 'Roberto Sanchez', 28005, 'Sevilla', 90, 'Reformado', 180000, 'Piso', 'Calle Mayor 5', 2, 3, 0, 'Piso amplio y luminoso', 'https://img.freepik.com/foto-gratis/3d-renderizado-loft-sala-estar-escandinava-mesa-trabajo-estanteria_105762-2094.jpg?w=1380&t=st=1682777461~exp=1682778061~hmac=4f23cafbd50d581b2b1f925e444842527560444848b8230a6772ffa887fa4d77'),
-(6, 'Ana Jimenez', 28006, 'Barcelona', 60, 'A reformar', 120000, 'Habitación', 'Calle Goya 6', 1, 0, 1, 'Habitación luminosa en zona céntrica', 'https://img.freepik.com/foto-gratis/interior-cocina-moderna-colores-brillantes_181624-61502.jpg?w=1380&t=st=1682777468~exp=1682778068~hmac=cc0719f68d3b2144d592cf7c64c8f0f0e461a048b506d58aa2c02e7e6f798d38'),
-(7, 'Carlos Gomez', 28007, 'Castellon', 75, 'Buen estado', 170000, 'Piso', 'Calle Arturo Soria 7', 1, 2, 1, 'Piso amplio en zona tranquila', 'https://img.freepik.com/foto-gratis/representacion-3d-comedor-moderno-sala-estar-decoracion-lujo_105762-1934.jpg?w=1380&t=st=1682777474~exp=1682778074~hmac=474e5bddb34837a92360791f62587c32f0525122cb27be06f8e7c053e89fe710'),
-(8, 'Sara Fernandez', 28008, 'Malaga', 110, 'A estrenar', 300000, 'Casa', 'Calle Velazquez 8', 2, 4, 0, 'Casa de lujo en zona exclusiva', 'https://img.freepik.com/foto-gratis/interior-habitacion-blanca-ventanas_181624-58245.jpg?w=1380&t=st=1682777480~exp=1682778080~hmac=d999226216cd2257e116ddb4eee72a64ea1fa096c02679f8f92b6f475ce0a927'),
-(9, 'Marta Ruiz', 28009, 'Madrid', 55, 'Reformado', 130000, 'Piso', 'Calle Orense 9', 1, 1, 0, 'Piso acogedor en zona comercial', 'https://img.freepik.com/foto-gratis/sala-estar-lujo-loft-renderizado-3d-estanteria-cerca-estanteria_105762-2224.jpg?w=1380&t=st=1682777486~exp=1682778086~hmac=d3e7b2aabf8caa6eb597a0b505dc11aa7aa72ca1e720febe6e07833c83e42ee2'),
-(10, 'Javier Lopez', 28010, 'Zaragoza', 95, 'Buen estado', 220000, 'Habitación', 'Calle Santa Engracia 10', 2, 2, 1, 'Habitación con gran terraza en zona céntrica', 'https://img.freepik.com/foto-gratis/3d-renderizado-loft-sala-estar-escandinava-mesa-trabajo-estanteria_105762-2162.jpg?w=1380&t=st=1682777513~exp=1682778113~hmac=8dc8cb97ffdb920540698b1f30d027c03068f6e11dadecc21fca82191dd6d5da'),
-(13, 'David', 50046, '12,6D', 54, 'Zaragoza', 546, 'Piso', 'Catalan Mendola', 2, 3, 0, 'Excelente piso', ''),
-(14, 'ErPEPE', 50019, 'Vigo', 110, 'Vigo', 630, '', 'Almonazid, 5D', 3, 3, 0, 'Muy buen piso', ''),
-(15, 'Victor', 546, '5D', 45, 'Zaragoza', 65, 'Piso', 'Americano en Paris', 2, 4, 0, 'Muy buen piso', ''),
-(16, '25', 546, 'SADA', 250, 'Zara', 999, 'Prueba', 'Pepe Castao, 5D 12 7823', 5, 1, 1, 'dadasda', '');
+(1, 'Juan Perez', 28001, 'Zaragoza', 70, 'Alquilado', 150000, 'Piso', 'Calle Gran Via 1', 1, 2, 0, 'Piso céntrico en buena ubicación', 'https://img.freepik.com/foto-gratis/hermosa-foto-interior-casa-moderna-paredes-blancas-relajantes-muebles-tecnologia_181624-3828.jpg?w=1380&t=st=1682777413~exp=1682778013~hmac=8e653b070878922b7ec068afe8a053f9df0580013f104c69b29e2a8de8e9a0aa'),
+(2, 'Maria Garcia', 28002, 'Zaragoza', 100, 'Alquilado', 250000, 'Casa', 'Calle Alcala 2', 2, 3, 0, 'Casa con patio en zona tranquila', 'https://img.freepik.com/foto-gratis/sala-estar-lujo-loft-representacion-3d-estanteria_105762-2104.jpg?w=1380&t=st=1682777382~exp=1682777982~hmac=dca59437c5067370705dde07fde78364acb82834169138cd9540bb70262faf52'),
+(3, 'Pedro Rodriguez', 28003, 'Madrid', 50, 'Alquilado', 100000, 'Habitación', 'Calle Serrano 3', 1, 0, 1, 'Habitación con gran potencial', 'https://img.freepik.com/foto-gratis/hermosa-foto-casa-moderna-cocina-comedor_181624-2870.jpg?w=1380&t=st=1682777431~exp=1682778031~hmac=9c4ae71df28d5264a3580b3e0c3e4ce7ade20856152035c329c9d72ebaacac5d'),
+(4, 'Laura Perez', 28004, 'Vigo', 80, 'Alquilado', 200000, 'Habitación', 'Calle Princesa 4', 2, 2, 1, 'Habitación con vistas espectaculares', 'https://img.freepik.com/foto-gratis/sala-estar-nadie-ella_482257-55.jpg?w=1380&t=st=1682777446~exp=1682778046~hmac=66b66cd05de1792d4adf73116cc895e0789d09952ac4b99ef461758821db5438'),
+(5, 'Roberto Sanchez', 28005, 'Sevilla', 90, 'No alquilado', 180000, 'Piso', 'Calle Mayor 5', 2, 3, 0, 'Piso amplio y luminoso', 'https://img.freepik.com/foto-gratis/3d-renderizado-loft-sala-estar-escandinava-mesa-trabajo-estanteria_105762-2094.jpg?w=1380&t=st=1682777461~exp=1682778061~hmac=4f23cafbd50d581b2b1f925e444842527560444848b8230a6772ffa887fa4d77'),
+(6, 'Ana Jimenez', 28006, 'Barcelona', 60, 'Alquilado', 120000, 'Habitación', 'Calle Goya 6', 1, 0, 1, 'Habitación luminosa en zona céntrica', 'https://img.freepik.com/foto-gratis/interior-cocina-moderna-colores-brillantes_181624-61502.jpg?w=1380&t=st=1682777468~exp=1682778068~hmac=cc0719f68d3b2144d592cf7c64c8f0f0e461a048b506d58aa2c02e7e6f798d38'),
+(7, 'Carlos Gomez', 28007, 'Castellon', 75, 'Alquilado', 170000, 'Piso', 'Calle Arturo Soria 7', 1, 2, 1, 'Piso amplio en zona tranquila', 'https://img.freepik.com/foto-gratis/representacion-3d-comedor-moderno-sala-estar-decoracion-lujo_105762-1934.jpg?w=1380&t=st=1682777474~exp=1682778074~hmac=474e5bddb34837a92360791f62587c32f0525122cb27be06f8e7c053e89fe710'),
+(8, 'Sara Fernandez', 28008, 'Malaga', 110, 'No alquilado', 300000, 'Casa', 'Calle Velazquez 8', 2, 4, 0, 'Casa de lujo en zona exclusiva', 'https://img.freepik.com/foto-gratis/interior-habitacion-blanca-ventanas_181624-58245.jpg?w=1380&t=st=1682777480~exp=1682778080~hmac=d999226216cd2257e116ddb4eee72a64ea1fa096c02679f8f92b6f475ce0a927'),
+(9, 'Marta Ruiz', 28009, 'Madrid', 55, 'No alquilado', 130000, 'Piso', 'Calle Orense 9', 1, 1, 0, 'Piso acogedor en zona comercial', 'https://img.freepik.com/foto-gratis/sala-estar-lujo-loft-renderizado-3d-estanteria-cerca-estanteria_105762-2224.jpg?w=1380&t=st=1682777486~exp=1682778086~hmac=d3e7b2aabf8caa6eb597a0b505dc11aa7aa72ca1e720febe6e07833c83e42ee2'),
+(10, 'Javier Lopez', 28010, 'Zaragoza', 95, 'Alquilado', 220000, 'Habitación', 'Calle Santa Engracia 10', 2, 2, 1, 'Habitación con gran terraza en zona céntrica', 'https://img.freepik.com/foto-gratis/3d-renderizado-loft-sala-estar-escandinava-mesa-trabajo-estanteria_105762-2162.jpg?w=1380&t=st=1682777513~exp=1682778113~hmac=8dc8cb97ffdb920540698b1f30d027c03068f6e11dadecc21fca82191dd6d5da');
 
 -- --------------------------------------------------------
 
@@ -349,19 +324,19 @@ ALTER TABLE `propietario`
 -- AUTO_INCREMENT de la tabla `alquilados`
 --
 ALTER TABLE `alquilados`
-  MODIFY `id_alquilados` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_alquilados` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `cita`
 --
 ALTER TABLE `cita`
-  MODIFY `idCita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idCita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `empleado`
@@ -373,13 +348,13 @@ ALTER TABLE `empleado`
 -- AUTO_INCREMENT de la tabla `imagenes`
 --
 ALTER TABLE `imagenes`
-  MODIFY `id_Imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id_Imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT de la tabla `inmueble`
 --
 ALTER TABLE `inmueble`
-  MODIFY `idInmueble` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `idInmueble` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `propietario`

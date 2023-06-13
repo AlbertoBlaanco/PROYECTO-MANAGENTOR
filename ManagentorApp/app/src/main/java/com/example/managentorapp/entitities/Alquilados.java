@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName;
 public class Alquilados {
     @SerializedName("ID_ALQUILADOS")
     private int id_alquilados;
-    @SerializedName("ID_CLIENTE")
-    private int id_inmueble;
     @SerializedName("ID_INMUEBLE")
+    private int id_inmueble;
+    @SerializedName("ID_CLIENTE")
     private int id_cliente;
     @SerializedName("FECHA")
     private String fecha;

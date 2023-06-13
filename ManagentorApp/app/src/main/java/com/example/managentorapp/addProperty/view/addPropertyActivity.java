@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,10 +22,10 @@ import java.io.Serializable;
 
 public class addPropertyActivity extends AppCompatActivity {
 
-  private EditText address1,address2,city,state,zipcode,bedroom,bathroom,squareMeters;
-  private Spinner spinner;
+  private EditText address1,address2,city,zipcode,bedroom,bathroom,squareMeters;
+  private Spinner spinner,spinner_property_state;
   private Button lessBedroom,lessBathroom,plusBedroom,plusBathroom,continueBtn;
-  private  Propiedad property;
+
 
 
     @Override
@@ -36,30 +37,26 @@ public class addPropertyActivity extends AppCompatActivity {
     }
 
     public void initComponents(){
-        Intent intent = this.getIntent();
-        /* ENTIDAD PROPERTY */
-        if(intent.getSerializableExtra("Property") != null){
-            this.property = (Propiedad) intent.getSerializableExtra("Property");
-
-        }else{
-            this.property = new Propiedad();
-        }
 
 
         /* EDIT TEXT*/
         address1 = findViewById(R.id.address_first_line);
         address2 = findViewById(R.id.address_second_line);
         city = findViewById(R.id.city);
-        state = findViewById(R.id.state);
         zipcode = findViewById(R.id.zipcode);
         squareMeters = findViewById(R.id.m2);
         bedroom = findViewById(R.id.bedroom);
         bathroom = findViewById(R.id.bathroom);
 
+
+
         spinner = (Spinner) findViewById(R.id.spinner_property_type);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.property_types, android.R.layout.simple_spinner_item);
         spinner.setAdapter(adapter);
 
+        spinner_property_state = (Spinner) findViewById(R.id.spinner_property_state);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,R.array.property_types_state, android.R.layout.simple_spinner_item);
+        spinner_property_state.setAdapter(adapter2);
 
 
         /*BUTTONS*/
@@ -110,31 +107,23 @@ public class addPropertyActivity extends AppCompatActivity {
 
     public void initData(){
 
-        if(isValidForm()){
+       if(isValidForm()){
+           Propiedad property = new Propiedad();
+
             String address = getAddress(address1, address2);
             int bedroomNumber = Integer.parseInt(bedroom.getText().toString());
             int bathroomNumber = Integer.parseInt(bathroom.getText().toString());
             int m2 = Integer.parseInt(squareMeters.getText().toString());
 
-            this.property.setNumHab(bedroomNumber);
-            this.property.setNumBanio(bathroomNumber);
-            this.property.setMetros(m2);
-            this.property.setDireccion(address);
-            this.property.setCiudad(city.getText().toString());
-            this.property.setZipcode(Integer.parseInt(zipcode.getText().toString()));
-            this.property.setEstado(state.getText().toString());
-            spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                    property.setFurnished(adapterView.getItemAtPosition(i).toString());
-                }
+            property.setNumHab(bedroomNumber);
+            property.setNumBanio(bathroomNumber);
+            property.setMetros(m2);
+            property.setDireccion(address);
+            property.setCiudad(city.getText().toString());
+            property.setZipcode(Integer.parseInt(zipcode.getText().toString()));
 
-                @Override
-                public void onNothingSelected(AdapterView<?> adapterView) {
-
-                }
-            });
-
+           property.setEstado(spinner_property_state.getSelectedItem().toString());
+           property.setFurnished(spinner.getSelectedItem().toString());
 
             Bundle bundle = new Bundle();
             bundle.putSerializable("Property", property);
@@ -183,14 +172,13 @@ public class addPropertyActivity extends AppCompatActivity {
         EditText address1 = findViewById(R.id.address_first_line);
         EditText address2 = findViewById(R.id.address_second_line);
         EditText city = findViewById(R.id.city);
-        EditText state = findViewById(R.id.state);
         EditText zipcode = findViewById(R.id.zipcode);
         EditText squareMeters = findViewById(R.id.m2);
         EditText bedroom = findViewById(R.id.bedroom);
         EditText bathroom = findViewById(R.id.bathroom);
 
         return isEditTextValid(address1) && isEditTextValid(address2) && isEditTextValid(city)
-                && isEditTextValid(state) && isEditTextValid(zipcode) && isEditTextValid(squareMeters)
+                 && isEditTextValid(zipcode) && isEditTextValid(squareMeters)
                 && isEditTextValid(bedroom) && isEditTextValid(bathroom);
     }
 

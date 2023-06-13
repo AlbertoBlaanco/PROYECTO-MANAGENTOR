@@ -69,16 +69,12 @@ public class FilterDialog extends DialogFragment
 		spinner.setAdapter(adapter);
 		radioGroupElevator = view.findViewById(R.id.has_elevator);
 
-		radioGroupElevator.setOnCheckedChangeListener((group, checkedId) -> {
-
-			String viewById = ((RadioButton) view.findViewById(radioGroupElevator.getCheckedRadioButtonId())).getText().toString();
-
-			if (viewById.equals(getContext().getResources().getString(R.string.no))) {
-				this.filterModel.setAscensor(false);
-			}else{
-				this.filterModel.setAscensor(true);
-			}
-		});
+		int id = radioGroupElevator.getCheckedRadioButtonId();
+		if (id == R.id.yes) {
+			this.filterModel.setAscensor(true);
+		} else if (id == R.id.no) {
+			this.filterModel.setAscensor(false);
+		}
 
 		ImageView rightIcon = view.findViewById(R.id.right_icon);
 		rightIcon.setOnClickListener(new View.OnClickListener() {

@@ -83,7 +83,6 @@ public class LoginActivity extends AppCompatActivity {
                         editor.apply();
 
                         Intent intent = new Intent(getBaseContext(), LstPropActivity.class);
-                        //intent.putExtra("idUser",userRespuesta.getIdEmple());
                         startActivity(intent);
 
 

@@ -21,8 +21,8 @@ import motor.MotorMySQL;
 public class AlquiladosDAO {
 
     private SQLTools miMotor = null;
-    private static final String SELECT_ALL = "SELECT * FROM alquilados";
-    private static final String SQL_ADD = "INSERT INTO alquilados (id_inmueble, id_cliente, Fecha)"
+    private static final String SELECT_ALL = "SELECT * FROM alquilados WHERE 1=1 ";
+    private static final String SQL_ADD = "INSERT INTO alquilados (id_cliente,id_inmueble , Fecha)"
             + "VALUES ('";
 
     public AlquiladosDAO() {
@@ -38,19 +38,19 @@ public class AlquiladosDAO {
 
             if (bean != null) {
                 if (bean.getId_alquilados() != 0) {
-                    sql_filtro += "AND idCliente='" + bean.getId_alquilados() + "'";
+                    sql_filtro += "AND id_alquilados='" + bean.getId_alquilados() + "'";
                 }
 
                 if (bean.getId_cliente() != 0) {
-                    sql_filtro += "AND idInmueble='" + bean.getId_cliente() + "'";
+                    sql_filtro += "AND id_cliente='" + bean.getId_cliente() + "'";
                 }
 
                 if (bean.getId_inmueble() != 0) {
-                    sql_filtro += "AND idInmueble='" + bean.getId_inmueble() + "'";
+                    sql_filtro += "AND id_inmueble='" + bean.getId_inmueble() + "'";
                 }
 
                 if (bean.getFecha().length() > 0 && !bean.getFecha().equals("") && bean.getFecha() != null) {
-                    sql_filtro += "AND Fecha_nacicli='" + bean.getFecha() + "'";
+                    sql_filtro += "AND Fecha='" + bean.getFecha() + "'";
                 }
 
             }
@@ -88,8 +88,8 @@ public class AlquiladosDAO {
 
             if (bean != null) {
 
-                sql_filtro += +bean.getId_inmueble() + "', '"
-                        + bean.getId_cliente() + "', '"
+                sql_filtro += +bean.getId_cliente() + "', '"
+                        + bean.getId_inmueble()+ "', '"
                         + (bean.getFecha() != null ? bean.getFecha() : "") + "')";
 
             }

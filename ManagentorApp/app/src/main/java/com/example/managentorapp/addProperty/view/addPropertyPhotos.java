@@ -261,7 +261,7 @@ public class addPropertyPhotos extends AppCompatActivity {
     private void uploadImage(String base64Image) {
         base64Image = base64Image.replaceAll("\\s+", "");
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<String> call = apiService.uploadImage(base64Image);
+        Call<String> call = apiService.uploadImage(base64Image,idInmueble);
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {

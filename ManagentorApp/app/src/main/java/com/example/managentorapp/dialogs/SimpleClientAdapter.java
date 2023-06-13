@@ -85,7 +85,6 @@ public class SimpleClientAdapter extends RecyclerView.Adapter<SimpleClientAdapte
 			public void onClick(View view) {
 				new SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE)
 						.setTitleText("¿Seguro que " + client.getNombreCli() + " va a alquilar el piso? ")
-						.setContentText("¿Lo juras?")
 						.setConfirmText("Alquilar")
 						.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
 							@Override

@@ -69,36 +69,7 @@ public interface ApiInterface {
     @POST("Controller/getFilterProp")
     Call<ArrayList<Propiedad>> getFilterProp(@Body RequestBody filtro);
 
-    @POST("Controller/uploadImage")
-    Call<String> uploadImage(@Body String base64Image);
-
-
-
-   /*
-    @GET("api/filtr_usu/{tipo}")
-    Call<ArrayList<Restaurante>> getFiltroRestaurante(@Path("tipo") String tipo);
-
-    @GET("api/ver_ficha/{idRestaurante}")
-    Call<ArrayList<Restaurante>> getFichaRestaurante(@Path("idRestaurante") int nombreRestaurante);
-
-    @GET("api/ver_carta/{idRestaurante}")
-    Call<ArrayList<Plato>> getCartaRestaurante(@Path("idRestaurante") int idRestaurante);
-
-    @GET("api/comprar/{total}/{idUser}")
-    Call<String> comprarLstCompra(@Path("total") String total, @Path("idUser") String idUser);
-
-    @GET("api/register/{nombre}/{password}")
-    Call <Usuario> sendRegisterData(@Path("nombre") String nombre,@Path("password") String password);
-
-    @GET("api/login/{nombre}/{password}")
-    Call <ArrayList<Usuario>> checkLogin(@Path("nombre") String nombre,@Path("password") String password);
-    @GET("api/historialCompras/{idUser}")
-    Call <ArrayList<Pedido>> getHistorialCompras(@Path("idUser") String idUser);*/
-
-
-
-
-
-
+    @POST("Controller/uploadImage/{idInmueble}")
+    Call<String> uploadImage(@Body String base64Image, @Path("idInmueble") int idInmueble);
 
 }

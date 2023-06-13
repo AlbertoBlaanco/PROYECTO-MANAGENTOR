@@ -91,20 +91,14 @@ public class addPropertyActivity2 extends AppCompatActivity {
             this.property.setPrecio(Integer.parseInt(price.getText().toString()));
             this.property.setPropietario(ownerName.getText().toString());
             this.property.setComentariosAdicionales(comments.getText().toString());
-            radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
-
-                String viewById = ((RadioButton) findViewById(radioGroup.getCheckedRadioButtonId())).getText().toString();
-
-                if (viewById.equals(getBaseContext().getResources().getString(R.string.no))) {
-                    this.property.setAscensor(false);
-                }else{
-                    this.property.setAscensor(true);
-                }
-            });
 
 
-            Gson gson = new Gson();
-            String json = gson.toJson(property);
+            int id = radioGroup.getCheckedRadioButtonId();
+            if (id == R.id.yes) {
+                this.property.setAscensor(true);
+            } else if (id == R.id.no) {
+                this.property.setAscensor(false);
+            }
 
             ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
             Call<Void> call = apiService.addPropiedad(property);

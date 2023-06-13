@@ -197,8 +197,10 @@ public class ManagentorAPI {
     @Produces(MediaType.APPLICATION_JSON)
     public String addPropiedad(String prop) {
         Gson gson = new Gson();
+        System.out.println(prop);
         Propiedad propiedad = gson.fromJson(prop, Propiedad.class);
         PropiedadDAO propiedadDAO = new PropiedadDAO();
+        
         propiedadDAO.addPropiedad(propiedad);
         return "finished";
     }
@@ -252,10 +254,10 @@ public class ManagentorAPI {
     }
 
     @POST
-    @Path("/uploadImage")
+    @Path("/uploadImage/{idInmueble}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public String uploadImage(String base64Image) {
+    public String uploadImage(String base64Image, @PathParam("idInmueble") int idInmueble) {
         Gson gson = new Gson();
         try {
 
@@ -264,7 +266,7 @@ public class ManagentorAPI {
             // Crear un directorio para guardar las imágenes
             String imagesDirectory = "E:\\Escritorio\\Insti\\2año\\Insti\\PHP\\www\\PruebaImagenesAndroid";
 
-            String urlBBDD = "http://192.168.1.42//PruebaImagenesAndroid/";
+            String urlBBDD = "http://192.168.1.35//PruebaImagenesAndroid/";
 
             File directory = new File(imagesDirectory);
             if (!directory.exists()) {
@@ -282,7 +284,7 @@ public class ManagentorAPI {
             }
 
             Imagenes img = new Imagenes();
-            img.setID_INMUEBLE(1);
+            img.setID_INMUEBLE(idInmueble);
             img.setURL(imagePath);
             ImagenesDAO imagenesDAO = new ImagenesDAO();
 

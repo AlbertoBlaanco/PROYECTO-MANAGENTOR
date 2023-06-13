@@ -10,9 +10,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.managentorapp.R;
 import com.example.managentorapp.entitities.Alquilados;
 import com.example.managentorapp.entitities.Cliente;
+import com.example.managentorapp.entitities.Imagenes;
 import com.example.managentorapp.entitities.Propiedad;
 import com.example.managentorapp.utils.ApiClient;
 import com.example.managentorapp.utils.ApiInterface;
@@ -27,6 +29,8 @@ import retrofit2.Response;
 public class LstAlquiladasAdapter extends RecyclerView.Adapter<LstAlquiladasAdapter.ViewHolder> {
     private ArrayList<Alquilados> dataset;
     private Context mContext;
+    private  ArrayList<Imagenes> photos;
+    private int photoIndex;
 
     public LstAlquiladasAdapter(Context mContext, ArrayList<Alquilados> lstRestaurantes){
         this.dataset = lstRestaurantes;
@@ -51,8 +55,42 @@ public class LstAlquiladasAdapter extends RecyclerView.Adapter<LstAlquiladasAdap
             @Override
             public void onResponse(Call<Propiedad> call, Response<Propiedad> response) {
                 Propiedad prop = response.body();
+
                 holder.direction.setText(prop.getDireccion());
-                Picasso.get().load(prop.getImagen()).into(holder.photo);
+
+
+                Call<ArrayList<Imagenes>> call2 = apiService.getImagenes(r.getId_inmueble());
+                call2.enqueue(new Callback<ArrayList<Imagenes>>() {
+                    @Override
+                    public void onResponse(Call<ArrayList<Imagenes>> call, Response<ArrayList<Imagenes>> response) {
+                        photos = response.body();
+                        photoIndex = 0;
+
+                        Glide.with(mContext)
+                                .load(photos.get(photoIndex).getURL())
+                                .into(holder.photo);
+                    }
+
+                    @Override
+                    public void onFailure(Call<ArrayList<Imagenes>> call, Throwable t) {
+
+                    }
+                });
+
+                Call<Cliente> call3 = apiService.getCliente(r.getId_cliente());
+                call3.enqueue(new Callback<Cliente>() {
+                    @Override
+                    public void onResponse(Call<Cliente> call, Response<Cliente> response) {
+                        Cliente cli = response.body();
+                        holder.clientName.setText(cli.getNombreCli());
+                    }
+
+                    @Override
+                    public void onFailure(Call<Cliente> call, Throwable t) {
+
+                    }
+                });
+
             }
 
             @Override
@@ -61,27 +99,9 @@ public class LstAlquiladasAdapter extends RecyclerView.Adapter<LstAlquiladasAdap
             }
         });
 
-        Call<Cliente> call2 = apiService.getCliente(r.getId_cliente());
 
-        call2.enqueue(new Callback<Cliente>() {
-            @Override
-            public void onResponse(Call<Cliente> call, Response<Cliente> response) {
-                Cliente cli = response.body();
-                holder.clientName.setText(cli.getNombreCli());
-            }
-
-            @Override
-            public void onFailure(Call<Cliente> call, Throwable t) {
-
-            }
-        });
 
         holder.rentDate.setText(r.getFecha());
-
-
-        //holder.direction.setText(direction);
-        //holder.clientName.setText(rentedClient.getName());
-
 
 
     }

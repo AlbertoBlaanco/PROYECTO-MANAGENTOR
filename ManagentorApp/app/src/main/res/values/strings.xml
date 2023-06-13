@@ -172,6 +172,13 @@
         <item>Habitación</item>
     </string-array>
 
+    <string-array name="property_types_state">
+        <item>Alquilado</item>
+        <item>No alquilado</item>
+    </string-array>
+
+
+
     <string-array name="property_types_filter">
         <item>Cualquiera</item>
         <item>Piso</item>
