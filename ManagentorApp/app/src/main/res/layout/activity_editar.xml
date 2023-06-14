@@ -249,51 +249,7 @@
         </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:baselineAligned="false"
-            android:orientation="horizontal"
-            android:weightSum="2">
 
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="@string/deposit_number"
-                android:layout_gravity="center_vertical"
-                android:textAppearance="@style/body_bold"
-                android:layout_weight="1" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1">
-
-                <Button
-                    android:id="@+id/btn_less_deposit"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/minus" />
-
-                <EditText
-                    android:id="@+id/deposit_edit"
-                    android:minWidth="40dp"
-                    android:layout_width="40dp"
-                    android:layout_height="match_parent"
-                    android:textAlignment="center"
-                    android:inputType="number"
-                    android:text="@string/default_number" />
-
-                <Button
-                    android:id="@+id/btn_plus_deposit"
-                    android:layout_width="40dp"
-                    android:layout_height="match_parent"
-                    android:text="@string/plus" />
-            </LinearLayout>
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
