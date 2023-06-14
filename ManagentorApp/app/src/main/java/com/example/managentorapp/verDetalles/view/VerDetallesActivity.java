@@ -40,7 +40,7 @@ import retrofit2.Response;
 
 public class VerDetallesActivity extends AppCompatActivity implements  RentDialog.ClientChosenListener,verDetallesContract.View{
     private TextView address, city, state, zipcode, furnished, bedroom, bathroom, squareMeters,
-            price, deposit, elevator, aditionalCommentsTxt, aditionalComments, owner;
+            price, deposit, elevator, aditional_comments_txt, aditionalComments, owner;
 
     private ImageView defaultPhoto;
 
@@ -83,7 +83,7 @@ public class VerDetallesActivity extends AppCompatActivity implements  RentDialo
         price = findViewById(R.id.price_view);
         //deposit = findViewById(R.id.deposit_view);
         elevator = findViewById(R.id.elevator_view);
-        //aditionalCommentsTxt = findViewById(R.id.aditional_comments_txt);
+        aditional_comments_txt = findViewById(R.id.aditional_comments_txt);
         aditionalComments = findViewById(R.id.aditional_comments_view);
         owner = findViewById(R.id.owner_view);
         defaultPhoto = findViewById(R.id.property_photo_view);
@@ -141,7 +141,7 @@ public class VerDetallesActivity extends AppCompatActivity implements  RentDialo
         this.price.setText(String.valueOf(price));
         elevator.setText(property.isAscensor() ? "Si" : "No");
         if (property.getComentariosAdicionales() == null || property.getComentariosAdicionales().isEmpty()) {
-            aditionalCommentsTxt.setVisibility(View.GONE);
+            aditional_comments_txt.setVisibility(View.GONE);
             aditionalComments.setVisibility(View.GONE);
         }
         aditionalComments.setText(property.getComentariosAdicionales());

@@ -93,14 +93,6 @@ public class EditarActivity extends AppCompatActivity {
         plusBathroom = findViewById(R.id.btn_plus_bathroom);
         plusBathroom.setOnClickListener(v -> bathroom.setText(addOneEditText(bathroom)));
 
-        deposit = findViewById(R.id.deposit_edit);
-        lessDeposit = findViewById(R.id.btn_less_deposit);
-        lessDeposit.setOnClickListener(v -> deposit.setText(minusOneEditText(deposit)));
-        plusDeposit = findViewById(R.id.btn_plus_deposit);
-        plusDeposit.setOnClickListener(v -> deposit.setText(addOneEditText(deposit)));
-
-
-
 
         spinner_furnished_edit = (Spinner) findViewById(R.id.spinner_furnished_edit);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.property_types, android.R.layout.simple_spinner_item);

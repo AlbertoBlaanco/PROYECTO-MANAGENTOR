@@ -1,6 +1,7 @@
 package com.example.managentorapp.lstPropAlquiladas.view;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,51 +59,21 @@ public class LstAlquiladasAdapter extends RecyclerView.Adapter<LstAlquiladasAdap
 
                 holder.direction.setText(prop.getDireccion());
 
+                // Obtener imágenes de forma asincrónica
+                getImagesAsync(apiService, r.getId_inmueble(), holder);
 
-                Call<ArrayList<Imagenes>> call2 = apiService.getImagenes(r.getId_inmueble());
-                call2.enqueue(new Callback<ArrayList<Imagenes>>() {
-                    @Override
-                    public void onResponse(Call<ArrayList<Imagenes>> call, Response<ArrayList<Imagenes>> response) {
-                        photos = response.body();
-                        photoIndex = 0;
-
-                        Glide.with(mContext)
-                                .load(photos.get(photoIndex).getURL())
-                                .into(holder.photo);
-                    }
-
-                    @Override
-                    public void onFailure(Call<ArrayList<Imagenes>> call, Throwable t) {
-
-                    }
-                });
-
-                Call<Cliente> call3 = apiService.getCliente(r.getId_cliente());
-                call3.enqueue(new Callback<Cliente>() {
-                    @Override
-                    public void onResponse(Call<Cliente> call, Response<Cliente> response) {
-                        Cliente cli = response.body();
-                        holder.clientName.setText(cli.getNombreCli());
-                    }
-
-                    @Override
-                    public void onFailure(Call<Cliente> call, Throwable t) {
-
-                    }
-                });
-
+                // Obtener cliente de forma asincrónica
+                getClientAsync(apiService, r.getId_cliente(), holder);
             }
 
             @Override
             public void onFailure(Call<Propiedad> call, Throwable t) {
-
+                // Manejo de error
+                Log.e("API Call", "Error retrieving property: " + t.getMessage());
             }
         });
 
-
-
         holder.rentDate.setText(r.getFecha());
-
 
     }
 
@@ -124,5 +95,49 @@ public class LstAlquiladasAdapter extends RecyclerView.Adapter<LstAlquiladasAdap
             rentDate = itemView.findViewById(R.id.rent_date);
             photo = itemView.findViewById(R.id.rented_property_photo);
         }
+    }
+
+
+    private void getImagesAsync(ApiInterface apiService, int propertyId, ViewHolder holder) {
+        Call<ArrayList<Imagenes>> call = apiService.getImagenes(propertyId);
+        call.enqueue(new Callback<ArrayList<Imagenes>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Imagenes>> call, Response<ArrayList<Imagenes>> response) {
+                ArrayList<Imagenes> photos = response.body();
+                if (photos != null && !photos.isEmpty()) {
+                    loadImageAsync(holder.photo, photos.get(0).getURL());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Imagenes>> call, Throwable t) {
+                // Manejo de error
+                Log.e("API Call", "Error retrieving images: " + t.getMessage());
+            }
+        });
+    }
+
+    private void getClientAsync(ApiInterface apiService, int clientId, ViewHolder holder) {
+        Call<Cliente> call = apiService.getCliente(clientId);
+        call.enqueue(new Callback<Cliente>() {
+            @Override
+            public void onResponse(Call<Cliente> call, Response<Cliente> response) {
+                Cliente cli = response.body();
+                if (cli != null) {
+                    holder.clientName.setText(cli.getNombreCli());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Cliente> call, Throwable t) {
+                // Manejo de error
+                Log.e("API Call", "Error retrieving client: " + t.getMessage());
+            }
+        });
+    }
+
+    private void loadImageAsync(ImageView imageView, String imageUrl) {
+        // Utilizar una biblioteca de carga de imágenes asincrónica como Picasso o Coil
+        Picasso.get().load(imageUrl).into(imageView);
     }
 }

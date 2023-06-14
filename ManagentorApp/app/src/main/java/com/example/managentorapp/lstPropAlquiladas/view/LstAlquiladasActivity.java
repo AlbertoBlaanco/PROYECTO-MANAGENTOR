@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,9 +15,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.managentorapp.R;
-import com.example.managentorapp.dialogs.FilterDialog;
 import com.example.managentorapp.entitities.Alquilados;
-import com.example.managentorapp.entitities.Propiedad;
 import com.example.managentorapp.listadoProp.view.LstPropActivity;
 import com.example.managentorapp.lstPropAlquiladas.lstAlquiladasContract;
 import com.example.managentorapp.lstPropAlquiladas.presenter.LstAlquiladasPresenter;
@@ -74,12 +71,15 @@ public class LstAlquiladasActivity extends AppCompatActivity implements lstAlqui
     }
 
     public void initData(){
+
         lstAlquiladasPresenter.getlstPropAlquiladas("");
     }
 
     @Override
     public void onSuccesslstPropAlquiladas(ArrayList<Alquilados> lstPropiedad) {
         LstAlquiladasAdapter lstAlquiladasAdapter = new LstAlquiladasAdapter(getBaseContext(),lstPropiedad);
+
+
         recyAlquiladas.setAdapter(lstAlquiladasAdapter);
     }
 
